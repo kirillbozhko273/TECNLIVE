@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function Support() {
   const faq = [
@@ -9,6 +10,20 @@ function Support() {
   ];
 
   return (
+    <>
+  <Helmet>
+
+    <title>
+      Поддержка — TECHLIVE
+    </title>
+
+    <meta
+      name='description'
+      content='Техническая поддержка пользователей TECHLIVE.'
+    />
+
+  </Helmet>
+
     <section className='support-page'>
       <div className='page-animation'></div>
       <div className='support-top'>
@@ -54,7 +69,7 @@ function Support() {
 
         <div className='support-right'>
           <div className='faq-box'>
-            <h2>FAQ</h2>
+            <h1>FAQ</h1>
 
             <div className='faq-list'>
               {faq.map((item, index) => (
@@ -69,7 +84,7 @@ function Support() {
           </div>
 
           <div className='message-box'>
-            <h2>Написать в поддержку</h2>
+            <h1>Написать в поддержку</h1>
 
             <input
               type='text'
@@ -92,6 +107,7 @@ function Support() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

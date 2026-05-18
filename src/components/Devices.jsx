@@ -9,7 +9,7 @@ function Devices() {
       name: 'RTX Gaming PC',
       price: '189 999 ₽',
       image:
-        '',
+        '/img/0235e6eae95e770faa6cca6f6739b58a.jpg',
     },
 
     {

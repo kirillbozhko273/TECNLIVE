@@ -43,3 +43,11 @@
   transform: scale(1.05);
   opacity: 0.9;
 }
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .devices-grid {
+    grid-template-columns: 1fr;
+  }
+}

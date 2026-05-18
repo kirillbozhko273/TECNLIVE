@@ -49,3 +49,16 @@
   margin-top: 50px;
   font-size: 24px;
 }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-item img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+}

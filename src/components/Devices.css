@@ -1,0 +1,45 @@
+.devices {
+  padding: 40px 20px;
+}
+
+.devices-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.device-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.device-card:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.device-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.device-card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #1e1e1e;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.device-card button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

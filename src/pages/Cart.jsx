@@ -1,101 +1,33 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+import './Cart.css';
 
 function Cart() {
-  const items = [
-    {
-      id: 1,
-      name: 'RTX 4090 Gaming PC',
-      price: '189 999 ₽',
-      image:
-        '',
-    },
+  const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
 
-    {
-      id: 2,
-      name: 'Gaming Keyboard',
-      price: '12 999 ₽',
-      image:
-        '',
-    },
-  ];
+  if (cartItems.length === 0) return <p className="empty-cart">Корзина пуста</p>;
+
+  const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <>
-  <Helmet>
-
-    <title>
-      Корзина — TECHLIVE
-    </title>
-
-    <meta
-      name='description'
-      content='Корзина товаров интернет-магазина TECHLIVE.'
-    />
-
-  </Helmet>
-
-    <section className='cart-page'>
-      <div className='page-animation'></div>
-      <div className='cart-top'>
-        <h1>Корзина</h1>
-
-        <p>
-          Ваши выбранные товары
-        </p>
-      </div>
-
-      <div className='cart-layout'>
-        <div className='cart-items'>
-          {items.map((item) => (
-            <div
-              className='cart-item'
-              key={item.id}
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-              />
-
-              <div className='cart-info'>
-                <h3>{item.name}</h3>
-
-                <span>{item.price}</span>
-              </div>
-
-              <div className='cart-quantity'>
-                <button>-</button>
-
-                <span>1</span>
-
-                <button>+</button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className='cart-summary'>
-          <h2>Итого</h2>
-
-          <div className='summary-line'>
-            <span>Товары</span>
-
-            <span>202 998 ₽</span>
+    <section className="cart-page">
+      <h1>Корзина</h1>
+      {cartItems.map(item => (
+        <div key={item.id} className="cart-item">
+          <img src={item.img} alt={item.name} />
+          <div className="cart-info">
+            <p className="cart-name">{item.name}</p>
+            <p className="cart-price">{item.price.toLocaleString()} ₽</p>
+            <p className="cart-quantity">Количество: {item.quantity}</p>
+            <button className="remove-btn" onClick={() => removeFromCart(item.id)}>Удалить</button>
           </div>
-
-          <div className='summary-line'>
-            <span>Доставка</span>
-
-            <span>Бесплатно</span>
-          </div>
-
-          <button>
-            Оформить заказ
-          </button>
         </div>
+      ))}
+      <div className="cart-total">
+        <p>Итого: {total.toLocaleString()} ₽</p>
+        <button className="clear-btn" onClick={clearCart}>Очистить корзину</button>
       </div>
     </section>
-    </>
   );
 }
 

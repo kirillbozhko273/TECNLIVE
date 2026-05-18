@@ -1,66 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+import './Devices.css';
 
-import { Link } from 'react-router-dom';
+const products = [
+  { id: 1, name: 'Игровой ПК', price: 150000, img: '/img/pc.jpg' },
+  { id: 2, name: 'Клавиатура', price: 7000, img: '/img/keyboard.jpg' },
+  { id: 3, name: 'Мышь', price: 4500, img: '/img/mouse.jpg' },
+];
 
 function Devices() {
-  const products = [
-    {
-      id: 1,
-      name: 'RTX Gaming PC',
-      price: '189 999 ₽',
-      image:
-        '/img/0235e6eae95e770faa6cca6f6739b58a.jpg',
-    },
-
-    {
-      id: 2,
-      name: 'Mechanical Keyboard',
-      price: '12 999 ₽',
-      image:
-        '',
-    },
-
-    {
-      id: 3,
-      name: 'Gaming Mouse X',
-      price: '4 999 ₽',
-      image:
-        '',
-    },
-  ];
+  const { addToCart } = useContext(CartContext);
 
   return (
-    <section className='devices'>
-      <div className='devices-title'>
-  <h2>Популярные товары</h2>
-
-  <p>
-    Премиальная техника нового поколения
-  </p>
-</div>
-
-      <div className='devices-grid'>
-        {products.map((item) => (
-          <div className='device-card' key={item.id}>
-            <div className='device-image'>
-              <img
-                src={item.image}
-                alt={item.name}
-              />
-            </div>
-
-            <div className='device-content'>
-              <h3>{item.name}</h3>
-
-              <span>{item.price}</span>
-
-              <Link
-  to='/cart'
-  className='buy-btn'
->
-  Купить
-</Link>
-            </div>
+    <section className="devices">
+      <h1>Популярные товары</h1>
+      <div className="devices-grid">
+        {products.map(product => (
+          <div key={product.id} className="device-card">
+            <img src={product.img} alt={product.name} />
+            <h3>{product.name}</h3>
+            <p>{product.price.toLocaleString()} ₽</p>
+            <button onClick={() => addToCart(product)}>Купить</button>
           </div>
         ))}
       </div>

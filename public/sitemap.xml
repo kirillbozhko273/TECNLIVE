@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+
+  <url>
+    <loc>
+      https://tecnlive.vercel.app/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://tecnlive.vercel.app/catalog
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://tecnlive.vercel.app/community
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://tecnlive.vercel.app/support
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://tecnlive.vercel.app/auth
+    </loc>
+  </url>
+
+</urlset>

@@ -1921,3 +1921,41 @@ nav a:hover {
     transform: translateY(0);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 40px 20px;
+  }
+
+  .devices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}

@@ -8,6 +8,7 @@ import Community from './pages/Community';
 import Support from './pages/Support';
 import Auth from './pages/Auth';
 import Cart from './pages/Cart';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -26,6 +27,11 @@ function App() {
         <Route path='/auth' element={<Auth />} />
         
         <Route path='/cart' element={<Cart />} />
+
+        <Route
+  path='*'
+  element={<NotFound />}
+/>
       </Routes>
     </BrowserRouter>
   );

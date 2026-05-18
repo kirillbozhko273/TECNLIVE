@@ -1,0 +1,43 @@
+.notfound {
+  height: 80vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+
+  text-align: center;
+}
+
+.notfound h1 {
+  font-size: 120px;
+
+  margin-bottom: 10px;
+}
+
+.notfound p {
+  font-size: 22px;
+
+  opacity: 0.7;
+
+  margin-bottom: 30px;
+}
+
+.back-home {
+  padding: 14px 30px;
+
+  border-radius: 12px;
+
+  background: white;
+
+  color: black;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}

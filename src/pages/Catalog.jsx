@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function Catalog() {
   const products = [
@@ -52,6 +53,19 @@ function Catalog() {
   ];
 
   return (
+    <>
+  <Helmet>
+
+    <title>
+      Каталог — TECHLIVE
+    </title>
+
+    <meta
+      name='description'
+      content='Каталог игровых ПК, клавиатур, мониторов и техники TECHLIVE.'
+    />
+
+  </Helmet>
     <section className='catalog-page'>
       <div className='catalog-top'>
         <h1>Каталог</h1>
@@ -132,6 +146,7 @@ function Catalog() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

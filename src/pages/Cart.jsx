@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function Cart() {
   const items = [
@@ -20,6 +21,20 @@ function Cart() {
   ];
 
   return (
+    <>
+  <Helmet>
+
+    <title>
+      Корзина — TECHLIVE
+    </title>
+
+    <meta
+      name='description'
+      content='Корзина товаров интернет-магазина TECHLIVE.'
+    />
+
+  </Helmet>
+
     <section className='cart-page'>
       <div className='page-animation'></div>
       <div className='cart-top'>
@@ -80,6 +95,7 @@ function Cart() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -7,6 +8,20 @@ function Auth() {
   const navigate = useNavigate();
 
   return (
+    <>
+  <Helmet>
+
+    <title>
+      Авторизация — TECHLIVE
+    </title>
+
+    <meta
+      name='description'
+      content='Вход и регистрация в TECHLIVE.'
+    />
+
+  </Helmet>
+
     <section className='auth-page'>
       <div className='page-animation'></div>
       <div className='auth-container'>
@@ -88,6 +103,7 @@ function Auth() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

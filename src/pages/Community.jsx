@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import {
   FaVk,
@@ -28,6 +29,19 @@ function Community() {
   ];
 
   return (
+    <>
+  <Helmet>
+
+    <title>
+      Community — TECHLIVE
+    </title>
+
+    <meta
+      name='description'
+      content='TECHLIVE Community — игровое сообщество и новости.'
+    />
+
+  </Helmet>
     <section className='community-page'>
       <div className='page-animation'></div>
       <div className='community-layout'>
@@ -78,6 +92,7 @@ function Community() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

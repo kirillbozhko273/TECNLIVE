@@ -14,6 +14,9 @@
   border-radius: 12px;
   text-align: center;
   transition: transform 0.3s, opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .device-card:hover {
@@ -23,13 +26,14 @@
 
 .device-card img {
   width: 100%;
-  height: auto;
+  height: 180px; /* фиксированная высота */
+  object-fit: cover; /* сохраняем пропорции */
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .device-card button {
-  margin-top: 10px;
+  margin-top: auto; /* толкает кнопку вниз */
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
@@ -44,10 +48,45 @@
   opacity: 0.9;
 }
 
+.device-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  min-height: 24px; /* чтобы все заголовки выравнивались */
+}
+
+.device-card p {
+  font-size: 16px;
+  color: #bbb; /* нейтральный цвет текста */
+  margin-bottom: 12px;
+}
+
 
 /* Адаптивность */
 @media (max-width: 768px) {
   .devices-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .devices-grid {
+    grid-template-columns: 1fr; /* 1 колонка */
+    gap: 15px;
+  }
+
+  .device-card img {
+    height: 150px; /* чуть меньше для мобилки */
+  }
+
+  .device-card h3 {
+    font-size: 16px;
+  }
+
+  .device-card p {
+    font-size: 14px;
+  }
+
+  .device-card button {
+    padding: 8px 12px;
   }
 }

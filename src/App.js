@@ -9,6 +9,7 @@ import Support from './pages/Support';
 import Auth from './pages/Auth';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -33,7 +34,9 @@ function App() {
   element={<NotFound />}
 />
       </Routes>
+      <Footer />
     </BrowserRouter>
+    
   );
 }
 

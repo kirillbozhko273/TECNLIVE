@@ -9,7 +9,7 @@ function Products() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://techlive-api.onrender.com/products")
       .then((response) => {
         setProducts(response.data);
       })

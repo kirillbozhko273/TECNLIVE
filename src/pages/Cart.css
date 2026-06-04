@@ -129,11 +129,7 @@
 
   border-radius: 14px;
 
-  background: linear-gradient(
-    135deg,
-    #06b6d4,
-    #3b82f6
-  );
+  background: #38bdf8;
 
   color: white;
 
@@ -253,7 +249,7 @@
 }
 
 .catalog-btn {
-  display: block;
+  display: inline-block;
 
   padding: 14px 28px;
 
@@ -261,19 +257,16 @@
 
   text-decoration: none;
 
-  color: rgb(0, 0, 0);
+  color: white;
 
-  background: #ffffff;
+  background: #38bdf8;
 
   transition: 0.3s;
 }
 
 .catalog-btn:hover {
-  transition: 0.3s;
+  background: #0ea5e9;
 
   transform: translateY(-2px);
 }
 
-.cart-item:last-child {
-  border-bottom: none;
-}

@@ -11,11 +11,11 @@ function Hero() {
         </p>
 
         <h1>
-          МОЩНОСТЬ.
+          МОЩНОСТЬ
           <br />
-          СТИЛЬ.
+          СТИЛЬ
           <br />
-          TECHLIVE.
+          TECHLIVE
         </h1>
 
         <p className='hero-description'>

@@ -26,7 +26,7 @@ function Auth() {
       <div className='page-animation'></div>
       <div className='auth-container'>
         <div className='auth-left'>
-          <span>TECHLIVE ACCOUNT</span>
+        
 
           <h1>
             Добро
@@ -86,20 +86,9 @@ function Auth() {
 </span>
 </div>
 
-          <div className='auth-divider'>
-            <span>или войдите с помощью
-            </span>
-          </div>
+          
 
-          <div className='social-auth'>
-            <button>
-              VK
-            </button>
-
-            <button>
-              Google
-            </button>
-          </div>
+        
         </div>
       </div>
     </section>

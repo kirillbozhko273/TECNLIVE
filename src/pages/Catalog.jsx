@@ -71,10 +71,6 @@ function Products() {
 
             <div className="sidebar-divider"></div>
 
-            <label className="check-box">
-              <input type="checkbox" />
-              Только в наличии
-            </label>
 
             <div className="premium-box">
               <span>TECHLIVE</span>

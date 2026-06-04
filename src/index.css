@@ -1359,24 +1359,12 @@ nav a:hover {
   transform: translate(-50%, -50%);
 }
 
-.auth-left span {
-  position: relative;
-
-  z-index: 2;
-
-  color: #7f7f7f;
-
-  letter-spacing: 4px;
-
-  font-size: 13px;
-}
-
 .auth-left h1 {
   position: relative;
 
   z-index: 2;
 
-  font-size: 88px;
+  font-size: 80px;
 
   line-height: 0.95;
 

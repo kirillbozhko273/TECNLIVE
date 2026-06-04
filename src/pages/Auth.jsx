@@ -67,7 +67,7 @@ function Auth() {
 
          <button
   className='auth-btn'
-  onClick={() => navigate('/')}
+  onClick={() => navigate('/catalog')}
 >
   Войти
 </button>

@@ -253,7 +253,7 @@
 }
 
 .catalog-btn {
-  display: inline-block;
+  display: block;
 
   padding: 14px 28px;
 
@@ -261,15 +261,15 @@
 
   text-decoration: none;
 
-  color: white;
+  color: rgb(0, 0, 0);
 
-  background: #38bdf8;
+  background: #ffffff;
 
   transition: 0.3s;
 }
 
 .catalog-btn:hover {
-  background: #0ea5e9;
+  transition: 0.3s;
 
   transform: translateY(-2px);
 }

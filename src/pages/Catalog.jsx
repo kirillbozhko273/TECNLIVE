@@ -107,7 +107,7 @@ function Products() {
                   <span>{item.price} ₽</span>
 
                   <button>
-                    Купить
+                    Добавить в корзину
                   </button>
 
                 </div>

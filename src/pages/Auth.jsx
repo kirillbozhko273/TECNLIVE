@@ -67,7 +67,19 @@ function Auth() {
 
          <button
   className='auth-btn'
-  onClick={() => navigate('/catalog')}
+  onClick={() => {
+
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        role: "user",
+        email: "user@techlive.ru"
+      })
+    );
+
+    navigate('/catalog');
+
+  }}
 >
   Войти
 </button>

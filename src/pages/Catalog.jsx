@@ -20,6 +20,23 @@ function Products() {
       });
   }, []);
 
+  const handleAddToCart = (item) => {
+
+  const user =
+    localStorage.getItem("user");
+
+  if (!user) {
+
+    navigate("/auth");
+
+    return;
+  }
+
+  alert(
+    `${item.name} добавлен в корзину`
+  );
+};
+
   return (
     <>
       <Helmet>
@@ -109,20 +126,12 @@ function Products() {
                   <span>{item.price} ₽</span>
 
                   <button
-                    onClick={() => {
-                    const user = localStorage.getItem("user");
-
-                      if (!user) {
-                      navigate("/auth");
-                      return;
-                    }
-
-                      alert("Товар добавлен в корзину");
-
-                    }}
-                    >
-                    Добавить в корзину
-                  </button>
+  onClick={() =>
+    handleAddToCart(item)
+  }
+>
+  Добавить в корзину
+</button>
 
                 </div>
 

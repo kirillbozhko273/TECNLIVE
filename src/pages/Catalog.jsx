@@ -68,7 +68,7 @@ function Products() {
 
             <button>Игровые ПК</button>
             <button>Ноутбуки</button>
-            <button>Мониторы</button>
+            <button>Комплектующие</button>
             <button>Клавиатуры</button>
             <button>Мыши</button>
 

@@ -2,10 +2,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 function Products() {
 
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -106,7 +108,19 @@ function Products() {
 
                   <span>{item.price} ₽</span>
 
-                  <button>
+                  <button
+                    onClick={() => {
+                    const user = localStorage.getItem("user");
+
+                      if (!user) {
+                      navigate("/auth");
+                      return;
+                    }
+
+                      alert("Товар добавлен в корзину");
+
+                    }}
+                    >
                     Добавить в корзину
                   </button>
 

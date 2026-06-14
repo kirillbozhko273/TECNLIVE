@@ -7,6 +7,7 @@ import Catalog from './pages/Catalog';
 import Community from './pages/Community';
 import Support from './pages/Support';
 import Auth from './pages/Auth';
+import Register from './pages/Register';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
 import Footer from "./components/Footer";
@@ -26,6 +27,8 @@ function App() {
         <Route path='/support' element={<Support />} />
 
         <Route path='/auth' element={<Auth />} />
+
+        <Route path='/register' element={<Register />} />
         
         <Route path='/cart' element={<Cart />} />
 

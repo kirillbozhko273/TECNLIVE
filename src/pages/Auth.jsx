@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +6,33 @@ import { useNavigate } from 'react-router-dom';
 function Auth() {
 
   const navigate = useNavigate();
+
+  const handleLogin = () => {
+
+  const savedUser = JSON.parse(
+    localStorage.getItem('user')
+  );
+
+  if (!savedUser) {
+    alert('Аккаунт не найден. Сначала зарегистрируйтесь.');
+    return;
+  }
+
+  if (
+    savedUser.email === email &&
+    savedUser.password === password
+  ) {
+    alert('Добро пожаловать в TECHLIVE!');
+
+    navigate('/catalog');
+  } else {
+    alert('Неверный email или пароль');
+  }
+
+};
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <>
@@ -45,14 +72,18 @@ function Auth() {
           <h2>Вход в аккаунт</h2>
 
           <input
-            type='email'
-            placeholder='Email'
-          />
+  type='email'
+  placeholder='Email'
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+/>
 
           <input
-            type='password'
-            placeholder='Пароль'
-          />
+  type='password'
+  placeholder='Пароль'
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+/>
 
           <div className='auth-options'>
             <label>
@@ -67,19 +98,7 @@ function Auth() {
 
          <button
   className='auth-btn'
-  onClick={() => {
-
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
-        role: "user",
-        email: "user@techlive.ru"
-      })
-    );
-
-    navigate('/catalog');
-
-  }}
+  onClick={handleLogin}
 >
   Войти
 </button>
@@ -87,20 +106,12 @@ function Auth() {
 <div className='register-link'>
   Нет аккаунта?
 
-  <span
-  onClick={() =>
-    alert(
-      'Регистрация будет доступна позже'
-    )
-  }
+ <span
+  onClick={() => navigate('/register')}
 >
   Зарегистрируйтесь
 </span>
 </div>
-
-          
-
-        
         </div>
       </div>
     </section>

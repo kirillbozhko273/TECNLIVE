@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
+
+import heroPC from '../assets/hero-pc.png';
 
 function Hero() {
   return (
@@ -37,9 +38,9 @@ function Hero() {
       
         <div className='hero-right'>
   <img
-    src='https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200&auto=format&fit=crop'
-    alt='pc'
-  />
+  src={heroPC}
+  alt='Игровой ПК TECHLIVE'
+/>
 </div>
 
     </section>

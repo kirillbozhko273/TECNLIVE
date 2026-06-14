@@ -12,10 +12,19 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: white;
   background-color: #000;
-
-  h1, h2, h3, h4, h5, h6, p, span, button, a {
-  font-family: 'Montserrat', sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+a {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .header {
@@ -188,29 +197,6 @@ nav a:hover {
   margin-bottom: 30px;
 }
 
-.hero button {
-  width: 290px;
-  height: 75px;
-
-  border: none;
-
-  border-radius: 20px;
-
-  background: white;
-
-  color: black;
-
-  font-size: 20px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.hero button:hover {
-  transform: translateY(-4px);
-}
 
 .hero-right {
   position: absolute;
@@ -230,38 +216,34 @@ nav a:hover {
   overflow: hidden;
 }
 
-.hero-right img {
-  width: 80%;
-  height: 60%;
-
-  object-fit: cover;
-
-  border-radius: 12px;
-
-  opacity: 0.88;
-
-
-}
 .hero::after {
   content: '';
 
   position: absolute;
 
-  right: 12%;
+  right: 10%;
   top: 50%;
 
   transform: translateY(-50%);
 
-  width: 500px;
-  height: 500px;
+  width: 650px;
+  height: 650px;
 
-  background: rgba(0, 119, 255, 0.12);
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,140,255,0.35) 0%,
+      rgba(0,90,255,0.18) 40%,
+      transparent 75%
+    );
 
-  filter: blur(140px);
+  filter: blur(90px);
 
   border-radius: 50%;
 
   z-index: 1;
+
+  animation: glowPulse 6s ease-in-out infinite;
 }
 
 @media(max-width: 1600px) {
@@ -312,35 +294,64 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-.hero button {
-  background: white;
-  color: black;
-
-  border: none;
-
-  padding: 20px 40px;
-
-  border-radius: 16px;
-
-  font-size: 18px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.hero button:hover {
-  transform: translateY(-3px);
-}
 
 .hero-right img {
   width: 720px;
 
   object-fit: contain;
 
+  opacity: 0.98;
+
+  position: relative;
+
+  z-index: 3;
+
   filter:
-    drop-shadow(0 0 60px rgba(255,255,255,0.08));
+    drop-shadow(0 0 25px rgba(255,255,255,0.15))
+    drop-shadow(0 0 80px rgba(0,132,255,0.45))
+    drop-shadow(0 0 160px rgba(0,80,255,0.25));
+
+  transition: 
+    transform 0.5s ease,
+    filter 0.5s ease;
+
+  animation: pcFloat 5s ease-in-out infinite;
+}
+
+.hero-right:hover img {
+  transform: scale(1.04);
+}
+
+@keyframes pcFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.7;
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  100% {
+    opacity: 0.7;
+    transform: translateY(-50%) scale(0.95);
+  }
 }
 
 .devices {

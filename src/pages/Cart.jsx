@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 import './Cart.css';
 
 function Cart() {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const handleCheckout = () => {
+  setShowSuccess(true);
+};
 
   if (cartItems.length === 0) {
   return (
@@ -118,9 +122,12 @@ function Cart() {
           </label>
         </div>
 
-        <button className="checkout-btn">
-          Оформить заказ
-        </button>
+        <button
+  className="checkout-btn"
+  onClick={handleCheckout}
+>
+  Оформить заказ
+</button>
 
         <button
           className="clear-btn"
@@ -132,6 +139,45 @@ function Cart() {
       </div>
 
     </div>
+
+{
+  showSuccess && (
+    <div className="success-overlay">
+
+      <div className="success-modal">
+
+        <div className="success-icon">
+          ✓
+        </div>
+
+        <h2>
+          Спасибо за заказ!
+        </h2>
+
+        <p>
+          Ваш заказ успешно оформлен.
+          Наш специалист свяжется с вами
+          для подтверждения заказа.
+        </p>
+
+        <button
+          className="success-btn"
+          onClick={() => {
+
+            clearCart();
+
+            setShowSuccess(false);
+
+          }}
+        >
+          Вернуться к покупкам
+        </button>
+
+      </div>
+
+    </div>
+  )
+}
 
   </section>
 );

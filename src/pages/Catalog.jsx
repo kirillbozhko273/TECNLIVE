@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 function Products() {
 
   const [products, setProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Все");
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
 
@@ -40,6 +41,13 @@ function Products() {
 
 };
 
+const filteredProducts =
+  selectedCategory === "Все"
+    ? products
+    : products.filter(
+        (item) => item.category === selectedCategory
+      );
+
   return (
     <>
       <Helmet>
@@ -69,11 +77,33 @@ function Products() {
 
             <h3>Категории</h3>
 
-            <button>Игровые ПК</button>
-            <button>Ноутбуки</button>
-            <button>Комплектующие</button>
-            <button>Клавиатуры</button>
-            <button>Мыши</button>
+            <button onClick={() => setSelectedCategory("Все")}>
+  Все товары
+</button>
+
+<button onClick={() => setSelectedCategory("ПК")}>
+  Игровые ПК
+</button>
+
+<button onClick={() => setSelectedCategory("Ноутбуки")}>
+  Ноутбуки
+</button>
+
+<button onClick={() => setSelectedCategory("Комплектующие")}>
+  Комплектующие
+</button>
+
+<button onClick={() => setSelectedCategory("Клавиатуры")}>
+  Клавиатуры
+</button>
+
+<button onClick={() => setSelectedCategory("Мыши")}>
+  Мыши
+</button>
+
+<button onClick={() => setSelectedCategory("Мониторы")}>
+  Мониторы
+</button>
 
             <div className="sidebar-divider"></div>
 
@@ -108,7 +138,7 @@ function Products() {
 
           <div className="catalog-grid">
 
-            {products.map((item) => (
+            {filteredProducts.map((item) => (
 
               <div
                 className="catalog-card"

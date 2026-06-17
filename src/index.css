@@ -2336,3 +2336,8 @@ body {
   }
 
 }
+
+.active-category {
+  background: white !important;
+  color: black !important;
+}

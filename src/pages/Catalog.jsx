@@ -1,6 +1,7 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import { CartContext } from "../context/CartContext";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +9,7 @@ function Products() {
 
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     axios
@@ -22,19 +24,20 @@ function Products() {
 
   const handleAddToCart = (item) => {
 
-  const user =
-    localStorage.getItem("user");
+  const user = localStorage.getItem("user");
 
   if (!user) {
-
     navigate("/auth");
-
     return;
   }
 
-  alert(
-    `${item.name} добавлен в корзину`
-  );
+  addToCart({
+    id: item._id,
+    name: item.name,
+    price: item.price,
+    img: item.image
+  });
+
 };
 
   return (
@@ -109,7 +112,7 @@ function Products() {
 
               <div
                 className="catalog-card"
-                key={item._id}
+                key={item.id}
               >
 
                 <div className="catalog-image">
